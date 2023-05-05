@@ -20,6 +20,9 @@ app.use((req, res, next) => {
 app.use("/api/workouts", workoutRoutes);
 app.use("/api/user", userRoutes);
 
+//to connect to cyclic
+app.use(express.static(path.join(__dirname + "/public")));
+
 // connect to db
 mongoose
   .connect(process.env.MONGO_URI)
